@@ -21,9 +21,11 @@ public class Program //basic boilerplate code ?
     string stringMaxPrice = Console.ReadLine();
     int maxPrice = int.Parse(stringMaxPrice);
 
-    List<Car> CarsMatchingSearch = new List<Car>(0); //new list to hold all the Car object we find which are under the given price.
+    List<Car> CarsMatchingSearch = new List<Car>(0); //new list to hold all the Car object we find which are under the
+    //given price.
 
-    foreach (Car automobile in Cars) //loop through all the Car objects which are stored in Cars list. each object in the list we store in teh variable automobile
+    foreach (Car automobile in Cars) //loop through all the Car objects which are stored in Cars list. each object in
+    //the list we store in teh variable automobile
     {
       if (automobile.WorthBuying(maxPrice)) //check to see if price is less than maxPrice
       {
@@ -34,7 +36,8 @@ public class Program //basic boilerplate code ?
     foreach(Car automobile in CarsMatchingSearch)
     {
       Console.WriteLine("______________________");
-      //writes each item in new list to console, GetMakeModel calls GetMakeModel in Car.cs(models folder) from outside the Car class
+      //writes each item in new list to console, GetMakeModel calls GetMakeModel in Car.cs(models folder) from outside
+      //the Car class
       Console.WriteLine(automobile.GetMakeModel());
       Console.WriteLine(automobile.GetMiles() + "miles");
       Console.WriteLine("$" + automobile.GetPrice());
