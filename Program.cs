@@ -16,10 +16,15 @@ public class Program //basic boilerplate code ?
   };
 
     lexus.SetPrice(2000);
+    lexus.SetMessage("This is a lexus");
 
     Console.WriteLine("Enter maximum price: ");
     string stringMaxPrice = Console.ReadLine();
     int maxPrice = int.Parse(stringMaxPrice);
+
+    Console.WriteLine("Enter maximum mileage: ");
+    string stringMaxMileage = Console.ReadLine();
+    int maxMileage = int.Parse(stringMaxMileage);
 
     List<Car> CarsMatchingSearch = new List<Car>(0); //new list to hold all the Car object we find which are under the
     //given price.
@@ -27,11 +32,15 @@ public class Program //basic boilerplate code ?
     foreach (Car automobile in Cars) //loop through all the Car objects which are stored in Cars list. each object in
     //the list we store in teh variable automobile
     {
-      if (automobile.WorthBuying(maxPrice)) //check to see if price is less than maxPrice
+      if (automobile.WorthBuying(maxPrice, maxMileage)) //check to see if price is less than maxPrice
       {
         CarsMatchingSearch.Add(automobile); //if true, added to new list CarsMatchingSearch
       }
+
     }
+      if (CarsMatchingSearch.Count == 0) {
+        Console.WriteLine("No matches found.");
+      }
 
     foreach(Car automobile in CarsMatchingSearch)
     {
