@@ -1,0 +1,19 @@
+@using CarDealership.Models;
+
+<h1>List Your Car for Sale Here!</h1>
+<ul>
+  @if (Model.Count == 0)
+  {
+    <p>There are currently no cars for sale!</p>
+  }
+  @if(Model.Count != 0)
+  {
+    @foreach (Item item in Model)
+    {
+      <li>@item.GetDescription()</li>
+    }
+  }
+
+
+</ul>
+<a href="/items/new">Add a new car to list it.</a>
