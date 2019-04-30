@@ -5,23 +5,23 @@ using System.Collections.Generic;
 
 namespace CarDealership.Controllers
 {
-  public class CarController : Controller
+  public class CarsController : Controller
   {
-    [HttpGet("/items")]
+    [HttpGet("/cars")]
     public ActionResult Index()
     {
-      List<Item> allItems = Item.GetAll();
-      return View(allItems);
+      List<Car> allCars = Car.GetAll();
+      return View(allCars);
     }
-    [HttpGet("/items/new")]
+    [HttpGet("/cars/new")]
     public ActionResult CreateForm()
     {
       return View();
     }
-    [HttpPost("/items")]
+    [HttpPost("/cars")]
     public ActionResult Create(string description)
     {
-      Item myItem = new Item(description);
+      Car myCar = new Car(description);
       return RedirectToAction("Index");
     }
 
